@@ -1,0 +1,391 @@
+/*ColorBox*/
+#colorbox, #cboxOverlay, #cboxWrapper{position:absolute; top:0; left:0; z-index:9999; overflow:hidden;}
+#cboxOverlay{position:fixed; width:100%; height:100%;}
+#cboxMiddleLeft, #cboxBottomLeft{clear:left;}
+#cboxContent{position:relative;}
+#cboxLoadedContent{overflow:auto;}
+#cboxTitle{margin:0;}
+#cboxLoadingOverlay, #cboxLoadingGraphic{position:absolute; top:0; left:0; width:100%; height:100%;}
+#cboxPrevious, #cboxNext, #cboxClose, #cboxSlideshow{cursor:pointer;}
+.cboxPhoto{float:left; margin:auto; border:0; display:block; max-width:none;}
+.cboxIframe{width:100%; height:100%; display:block; border:0;}
+#colorbox, #cboxContent, #cboxLoadedContent{box-sizing:content-box;}
+
+#cboxOverlay{background:#000;}
+#cboxTopLeft{width:21px; height:21px; background:url(../images/controls.png) no-repeat -101px 0;}
+#cboxTopRight{width:21px; height:21px; background:url(../images/controls.png) no-repeat -130px 0;}
+#cboxBottomLeft{width:21px; height:21px; background:url(../images/controls.png) no-repeat -101px -29px;}
+#cboxBottomRight{width:21px; height:21px; background:url(../images/controls.png) no-repeat -130px -29px;}
+#cboxMiddleLeft{width:21px; background:url(../images/controls.png) left top repeat-y;}
+#cboxMiddleRight{width:21px; background:url(../images/controls.png) right top repeat-y;}
+#cboxTopCenter{height:21px; background:url(../images/border.png) 0 0 repeat-x;}
+#cboxBottomCenter{height:21px; background:url(../images/border.png) 0 -29px repeat-x;}
+#cboxContent{background:#fff; overflow:hidden;}
+.cboxIframe{background:#fff;}
+#cboxError{padding:50px; border:1px solid #ccc;}
+#cboxTitle{position:absolute; bottom:4px; left:0; text-align:center; width:100%; color:#949494;}
+#cboxCurrent{position:absolute; bottom:4px; left:58px; color:#949494;}
+#cboxSlideshow{position:absolute; bottom:4px; right:30px; color:#0092ef;}
+#cboxPrevious{position:absolute; bottom:0; left:0; background:url(../images/controls.png) no-repeat -75px 0; width:25px; height:25px; text-indent:-9999px;}
+#cboxPrevious:hover{background-position:-75px -25px;}
+#cboxNext{position:absolute; bottom:0; left:27px; background:url(../images/controls.png) no-repeat -50px 0; width:25px; height:25px; text-indent:-9999px;}
+#cboxNext:hover{background-position:-50px -25px;}
+#cboxLoadingOverlay{background:url(../images/loading_background.png) no-repeat center center;}
+#cboxLoadingGraphic{background:url(../images/loading.gif) no-repeat center center;}
+#cboxClose{position:absolute; bottom:0; right:0; background:url(../images/controls.png) no-repeat -25px 0; width:25px; height:25px; text-indent:-9999px; display: none;}
+#cboxClose:hover{background-position:-25px -25px;}
+
+.cboxIE #cboxTopLeft, .cboxIE #cboxTopCenter, .cboxIE #cboxTopRight, .cboxIE #cboxBottomLeft, .cboxIE #cboxBottomCenter, .cboxIE #cboxBottomRight, .cboxIE #cboxMiddleLeft, .cboxIE #cboxMiddleRight {
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF);
+}
+
+/*Jquery Better Checkboxes*/
+.tzCheckBox {
+	background: url('../images/better_checkbox.png') no-repeat right bottom;
+	display: inline-block;
+	min-width: 60px;
+	height: 33px;
+	white-space: nowrap;
+	position: relative;
+	cursor: pointer;
+	margin-left: 14px;
+}
+
+.tzCheckBox.checked {
+	background-position: top left;
+	margin: 0 14px 0 0;
+}
+
+.tzCheckBox .tzCBContent {
+	color: white;
+	line-height: 31px;
+	padding-right: 38px;
+	text-align: right;
+}
+
+.tzCheckBox.checked .tzCBContent {
+	text-align: left;
+	padding: 0 0 0 38px;
+}
+
+.tzCBPart {
+	background: url('../images/better_checkbox.png') no-repeat left bottom;
+	width: 14px;
+	position: absolute;
+	top: 0;
+	left: -14px;
+	height: 33px;
+	overflow: hidden;
+}
+
+.tzCheckBox.checked .tzCBPart {
+	background-position: top right;
+	left: auto;
+	right: -14px;
+}
+
+/*Jquery Vetical Tabs*/
+.vtabs {
+    border: 1px solid #FFFFFF;
+    margin: 10px 0 0;
+    position: relative;
+}
+
+.vtabs .vtabs-tab-column {
+	position: absolute; left: 0; margin: 0; width: 120px; min-width: 120px;
+}
+
+.vtabs .vtabs-tab-column ul {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+}
+
+.vtabs .vtabs-tab-column ul li.open, .vtabs .vtabs-tab-column ul li.closed {
+	background-color: #ffffff;
+	margin: 0 0 3px;
+    min-height: 20px;
+    padding: 4px 5px 1px 7px;
+    z-index: 10;
+	/* round corners do not work in IE */
+	-moz-border-radius-topleft: 3px;
+	-moz-border-radius-bottomleft: 3px;
+	-webkit-border-top-left-radius: 3px;
+	-webkit-border-bottom-left-radius: 3px;
+	border-top: 1px solid #999999;
+	border-bottom: 1px solid #999999;
+	border-left: 1px solid #999999;
+}
+
+.vtabs .vtabs-tab-column ul li.closed {
+	background-color: #bbbbbb;
+	border-right: 1px solid #777777;
+	background-image: url('../images/ClosedTabBackground.png');
+	background-repeat:repeat-x;	
+}
+
+.vtabs .vtabs-tab-column ul li:hover {
+	cursor: pointer;
+}
+
+.vtabs .vtabs-tab-column ul li a.open, .vtabs .vtabs-tab-column ul li a.closed {
+	font-weight: bold;
+	margin: 0px;
+	padding: 0px;
+	text-decoration: none;
+}
+
+.vtabs .vtabs-content-column {
+	padding: 0px;
+	margin: 0px;
+}
+
+.vtabs .vtabs-content-column .vtabs-content-panel {
+	background-color: #ffffff;
+	padding-left: 7px;
+	padding-right: 7px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	margin: 0px;
+	-moz-border-radius-topright: 3px;
+	-moz-border-radius-bottomright: 3px;
+	-moz-border-radius-bottomleft: 3px;
+	-webkit-border-top-right-radius: 3px;
+	-webkit-border-bottom-right-radius: 3px;	
+	-webkit-border-bottom-left-radius: 3px;
+	border-top: 1px solid #999999;
+	border-bottom: 1px solid #999999;
+	border-right: 1px solid #999999;
+	border-left: 1px solid #999999;
+}
+
+.vtabs-content-panel textarea {
+	width: 100%;
+	height: 150px;
+}
+
+.vtabs-content-panel p {
+	margin: 5px 0 15px !important;
+}
+/*IOS CheckBox*/
+div.iPhoneCheckContainer {
+	width: 129px;
+}
+
+.iPhoneCheckContainer {
+	position: relative;
+	height: 27px;
+	cursor: pointer;
+	overflow: hidden;
+}
+
+.iPhoneCheckContainer input {
+	position: absolute;
+	top: 5px;
+	left: 30px;
+	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+	opacity: 0;
+}
+
+.iPhoneCheckContainer label {
+	white-space: nowrap;
+	font-size: 10px;
+	line-height: 17px;
+	font-weight: bold;
+	font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+	cursor: pointer;
+	display: block;
+	height: 27px;
+	position: absolute;
+	width: auto;
+	top: 0;
+	padding-top: 5px;
+	overflow: hidden;
+}
+	
+.iPhoneCheckContainer, .iPhoneCheckContainer label {
+	user-select: none;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+}
+
+.iPhoneCheckDisabled {
+	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+	opacity: 0.5;
+}
+
+label.iPhoneCheckLabelOn {
+	color: white;
+	background: url('../images/iphone_on.png') no-repeat;
+	text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.6);
+	left: 0;
+	padding-top: 5px;+
+}
+
+label.iPhoneCheckLabelOn span {
+    padding-left: 8px;
+}
+label.iPhoneCheckLabelOff {
+	color: #8b8b8b;
+	background: url('../images/iphone_off.png') no-repeat right 0;
+	text-shadow: 0px 0px 2px rgba(255, 255, 255, 0.6);
+	text-align: right;
+	right: 0;
+}
+
+label.iPhoneCheckLabelOff span {
+    padding-right: 8px;
+}
+
+.iPhoneCheckHandle {
+	display: block;
+	height: 27px;
+	cursor: pointer;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0;
+	background: url('../images/iphone_slider_left.png') no-repeat;
+	padding-left: 3px;
+}
+
+.iPhoneCheckHandleRight {
+	height: 100%;
+	width: 100%;
+	padding-right: 3px;
+	background: url('../images/iphone_slider_right.png') no-repeat right 0;
+}
+
+.iPhoneCheckHandleCenter {
+	height: 100%;
+	width: 100%;
+	background: url('../images/iphone_slider_center.png');
+}
+
+.iOSCheckContainer {
+	position: relative;
+	height: 27px;
+	cursor: pointer;
+	overflow: hidden;
+}
+
+.iOSCheckContainer input {
+	position: absolute;
+	top: 5px;
+	left: 30px;
+	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+	opacity: 0;
+}
+
+.iOSCheckContainer label {
+	white-space: nowrap;
+	font-size: 17px;
+	line-height: 17px;
+	font-weight: bold;
+	font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+	cursor: pointer;
+	display: block;
+	height: 27px;
+	position: absolute;
+	width: auto;
+	top: 0;
+	padding-top: 5px;
+	overflow: hidden;
+}
+
+.iOSCheckContainer, .iOSCheckContainer label {
+	user-select: none;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+}
+
+.iOSCheckDisabled {
+	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+	opacity: 0.5;
+}
+
+label.iOSCheckLabelOn {
+	color: white;
+	background: url('../images/iphone_on.png') no-repeat;
+	text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.6);
+	left: 0;
+	padding-top: 5px;
+}
+  
+label.iOSCheckLabelOn span {
+    padding-left: 8px;
+}
+
+label.iOSCheckLabelOff {
+	color: #8b8b8b;
+	background: url('../images/iphone_off.png') no-repeat right 0;
+	text-shadow: 0px 0px 2px rgba(255, 255, 255, 0.6);
+	text-align: right;
+	right: 0;
+}
+  
+label.iOSCheckLabelOff span {
+	padding-right: 8px;
+}
+
+.iOSCheckHandle {
+	display: block;
+	height: 27px;
+	cursor: pointer;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0;
+	background: url('../images/iphone_slider_left.png') no-repeat;
+	padding-left: 3px;
+}
+
+.iOSCheckHandleRight {
+	height: 100%;
+	width: 100%;
+	padding-right: 3px;
+	background: url('../images/iphone_slider_right.png') no-repeat right 0;
+}
+
+.iOSCheckHandleCenter {
+	height: 100%;
+	width: 100%;
+	background: url('../images/iphone_slider_center.png');
+}
+
+/* Multiselect*/
+.multiselect { height: 357px !important; width: 560px; }
+.ui-multiselect { border: solid 1px; font-size: 0.8em; margin-bottom: 10px; }
+.ui-multiselect ul { -moz-user-select: none; }
+.ui-multiselect li { margin: 0; padding: 0; cursor: default; line-height: 20px; height: 20px; font-size: 11px; list-style: none; }
+.ui-multiselect li a { color: #999; text-decoration: none; padding: 0; display: block; float: left; cursor: pointer;}
+.ui-multiselect li.ui-draggable-dragging { padding-left: 10px; }
+
+.ui-multiselect div.selected { position: relative; padding: 0; margin: 0; border: 0; float:left; }
+.ui-multiselect ul.selected { position: relative; padding: 0; overflow: auto; overflow-x: hidden; background: #fff; margin: 0; list-style: none; border: 0; position: relative; width: 100%; }
+.ui-multiselect ul.selected li { }
+
+.ui-multiselect div.available { position: relative; padding: 0; margin: 0; border: 0; float:left; border-left: 1px solid; }
+.ui-multiselect ul.available { position: relative; padding: 0; overflow: auto; overflow-x: hidden; background: #fff; margin: 0; list-style: none; border: 0; width: 100%; }
+.ui-multiselect ul.available li { padding-left: 10px; }
+ 
+.ui-multiselect .ui-state-default { border: none; margin-bottom: 1px; position: relative; padding-left: 20px;}
+.ui-multiselect .ui-state-hover { border: none; }
+.ui-multiselect .ui-widget-header {border: none; font-size: 11px; margin-bottom: 1px;}
+ 
+.ui-multiselect .add-all { float: right; padding: 7px;}
+.ui-multiselect .remove-all { float: right; padding: 7px;}
+.ui-multiselect .search { float: left; padding: 4px;}
+.ui-multiselect .count { float: left; padding: 7px;}
+
+.ui-multiselect li span.ui-icon-arrowthick-2-n-s { position: absolute; left: 2px; }
+.ui-multiselect li a.action { position: absolute; right: 2px; top: 2px; }
+ 
+.ui-multiselect input.search { height: 14px; padding: 1px; opacity: 0.5; margin: 4px; width: 100px; }
+
+/*Admin Page*/
+.wp-ads-pro input.submit {
+	background: #21759B;
+    padding: 10px 0;
+    width: 100%;
+}
